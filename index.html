@@ -62,12 +62,18 @@
 						</button>
 					</div>
 
+<!--					<div class="container-login100-form-btn m-t-32">-->
+<!--						<button onclick="apiJSON()" class="login100-form-btn">-->
+<!--							APIJSON-->
+<!--						</button>-->
+<!--					</div>-->
+
 					<br>
 					<center>
 
-						<a style="font-style: italic; font-size: 14px; text-align: center;"> Copyright by ARIAV ALI GROUP</a>
+						<a style="font-style: italic; font-size: 8px; text-align: center;"> © ARIAV ALI GROUP</a>
 						<br>
-						<a style="font-style: italic; font-size: 14px; text-align: center;">2019 - <script>document.write(new Date().getFullYear())</script></a>
+						<a style="font-style: italic; font-size: 8px; text-align: center;">2019 - <script>document.write(new Date().getFullYear())</script></a>
 					</center>
 
 				</form>
@@ -4302,6 +4308,36 @@
 			}
 			alert("Data ditemukan!");
 		}
+
+		function apiJSON(callback) {
+
+			var xobj = new XMLHttpRequest();
+			// true parameter denotes asynchronous
+			xobj.open('GET', "data.json", true);
+			xobj.onreadystatechange = function () {
+				if (xobj.readyState == 4 && xobj.status == "200") {
+					// This marks that the response has been successfully retrieved from the server
+					// Utilize callback
+					// callback(xobj.responseText);
+
+					let userObj = JSON.parse(xobj.response);
+					const searchValue = document.getElementById("no_ujian").value.toUpperCase();
+
+					for (let i = 0; i < userObj.length; i++) {
+						if (userObj[i].no_ujian.toUpperCase() == searchValue) {
+							// Redirect ke link lain apabila data ditemukan
+							// alert("Data ditemukan!");
+							window.location.href = service[i].link;
+							// break;
+						}
+					}
+
+					userObj.clear();
+				}
+			};
+			xobj.send(null);
+		}
+
 	</script>
 
 </body>
