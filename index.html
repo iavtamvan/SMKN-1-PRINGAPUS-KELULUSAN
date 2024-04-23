@@ -4297,16 +4297,20 @@
 		function searchData() {
 			const searchValue = document.getElementById("no_ujian").value.toUpperCase();
 
-			for (let i = 0; i < service.length; i++) {
-				if (service[i].no_ujian.toUpperCase() === searchValue) {
-					// Redirect ke link lain apabila data ditemukan
-					// alert(service[i].link)
-					// console.log(service[i].link)
-					window.location.href = service[i].link;
-					break;
+			if (searchValue === "") {
+				alert("Data tidak ditemukan")
+			} else {
+				for (let i = 0; i < service.length; i++) {
+					if (service[i].no_ujian.toUpperCase() === searchValue) {
+						// Redirect ke link lain apabila data ditemukan
+						// alert(service[i].link)
+						// console.log(service[i].link)
+						window.location.href = service[i].link;
+						break;
+					}
 				}
+				alert("Data ditemukan, SKL Langsung di Download!");
 			}
-			alert("Data ditemukan, SKL Langsung di Download!");
 		}
 
 		function apiJSON(callback) {
