@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08c120bb-6e2f-409e-b970-905461fcbe4e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,19 +26,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/PDAM SEMARANG/Documents/SMKN-1-PRINGAPUS/images",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PDAM SEMARANG/Documents/SMKN-1-PRINGAPUS/images&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\PDAM SEMARANG\Documents\SMKN-1-PRINGAPUS\images" />
       <recent name="C:\Users\PDAM SEMARANG\Documents\SMKN-1-PRINGAPUS\css" />
       <recent name="C:\Users\PDAM SEMARANG\Documents\SMKN-1-PRINGAPUS" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SMK-SUDIRMAN-WEB-HTML-KELULUSAN-" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SMK-SUDIRMAN-WEB-HTML-KELULUSAN-" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -52,7 +65,8 @@
       <updated>1654138280856</updated>
       <workItem from="1654138282025" duration="1034000" />
       <workItem from="1713335193124" duration="758000" />
-      <workItem from="1713336232293" duration="19261000" />
+      <workItem from="1713336232293" duration="21236000" />
+      <workItem from="1714353685166" duration="1000000" />
     </task>
     <servers />
   </component>
