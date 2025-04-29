@@ -148,7 +148,7 @@ iframe {
 }
 
 .container-login100 {
-  width: 100%;  
+  width: 100%;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -164,7 +164,7 @@ iframe {
   background-position: center;
   background-size: cover;
   position: relative;
-  z-index: 1;  
+  z-index: 1;
 }
 
 .container-login100::before {
@@ -176,7 +176,15 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.65);
+}
+
+.container-image {
+  background-image: url('/images/bg_dua.jpg');
+  background-size: cover;          /* Penting: agar gambar penuh dan responsive */
+  background-position: center;     /* Tengah-tengah */
+  background-repeat: no-repeat;    /* Jangan mengulang gambar */
+  background-attachment: fixed;    /* Opsional: agar background tetap saat scroll */
+  min-height: 100vh;               /* Set tinggi minimal 100% layar */
 }
 
 .wrap-login100 {
@@ -217,7 +225,7 @@ iframe {
 
 .login100-form-title {
   font-family: Ubuntu-Bold;
-  font-size: 28px;
+  font-size: 18px;
   color: #fff;
   line-height: 1.2;
   text-align: center;
