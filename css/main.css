@@ -157,12 +157,13 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  padding: 15px;
+  align-items: flex-start;
+  padding: 35px;
 
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-size: cover;
+  background-attachment: fixed; /* Membuat gambar latar tetap saat scroll (opsional) */
   position: relative;
   z-index: 1;
 }
@@ -191,6 +192,7 @@ iframe {
   width: 390px;
   border-radius: 10px;
   overflow: hidden;
+  padding-top: 20px;
 
   background: transparent;
 }
@@ -224,14 +226,37 @@ iframe {
 }
 
 .login100-form-title {
-  font-family: Ubuntu-Bold;
-  font-size: 18px;
-  color: #fff;
-  line-height: 1.2;
+  font-family: "JetBrains Mono Medium";
+  font-size: 20px;
+  padding-top: 20px;
+  color: #000000;
   text-align: center;
   text-transform: uppercase;
-
   display: block;
+}
+
+.typing-effect {
+  padding-left: 10px;
+  display: inline-block;
+  overflow: hidden; /* Menyembunyikan teks yang belum tampil */
+  border-right: 0.15em solid #000; /* Menambahkan garis vertikal yang mirip dengan kursor */
+  white-space: nowrap; /* Mencegah teks turun ke baris berikutnya */
+  animation: typing 4s steps(30) 1s infinite normal both, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
 }
 
 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SNIPER | Sistem Kelulusan SMKN 1 PRINGAPUS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/logo-sniper.png"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('/images/bg_dua.jpg');">
+        <div class="wrap-login100 p-t-10 p-b-50">
+            <form class="login100-form validate-form p-b-10 p-t-1">
+
+                <div class="container-login100-form-btn p-t-10">
+                    <img src="images/logo-sniper.png" alt="SNIPER" width="130" height="130" class="center">
+                </div>
+                <span class="login100-form-title typing-effect">
+					SMK NEGERI 1 PRINGAPUS
+				</span>
+
+                <div class="wrap-input100 validate-input" data-validate="Masukan Nomor Ujian">
+                    <input class="input100" type="text" name="no_ujian" id="no_ujian" placeholder="Nomor Ujian">
+                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                </div>
+
+                <div class="container-login100-form-btn m-t-32">
+                    <button onclick="searchData()" class="login100-form-btn">
+                        UNDUH
+                    </button>
+                </div>
+                <br>
+                <center>
+
+                    <a style="font-style: italic; font-size: 8px; text-align: center;"> © ARIAV ALI GROUP</a>
+                    <br>
+                    <a style="font-style: italic; font-size: 8px; text-align: center;">2019 -
+                        <script>document.write(new Date().getFullYear())</script>
+                    </a>
+                </center>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/daterangepicker/moment.min.js"></script>
+<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="js/main.js"></script>
+
+<script>
+    let service = [];
+    fetch('5b17f39e-5996-426b-9404-b9cf6c643207/d3c4a2b7-26dd-4410-84d3-f3069a8d7470.json')
+        .then(response => response.json())
+        .then(data => {
+            service = data;
+            console.log(service)
+        })
+        .catch(error => {
+            console.error('Gagal memuat data:', error);
+        });
+
+    function searchData() {
+        const searchValue = document.getElementById("no_ujian").value.toUpperCase();
+
+        if (searchValue === "") {
+            alert("Mohon isi nomor ujian Anda.");
+        } else {
+            let link = null;
+            for (let i = 0; i < service.length; i++) {
+                if (service[i].no_ujian === searchValue) {
+                    link = service[i].link;
+                    break;
+                }
+            }
+
+            if (link) {
+                const a = document.createElement('a');
+                a.href = link;
+                a.target = 'none'; // (catatan: target="none" sebenarnya tidak valid, tapi saya tidak ubah sesuai permintaan kamu)
+                a.download = '';    // Hint untuk browser supaya download
+                document.body.appendChild(a);
+                a.click();          // Simulasikan klik
+                document.body.removeChild(a); // Bersihkan
+            } else {
+                alert("Data tidak ditemukan. Silahkan cek kembali nomor ujian Anda.");
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>
