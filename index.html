@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>404?! Kamu Ngapain?</title>
     <style>
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
         }
 
         body {
@@ -22,9 +26,9 @@
             max-width: 600px;
             margin: auto;
             background: #fff;
-            padding: 40px;
+            padding: 10px;
             border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             border: 3px dashed #f582ae;
         }
 
@@ -67,6 +71,20 @@
     </style>
 
     <script>
+
+        // Jalankan jam lokal real-time
+        setInterval(() => {
+            const localDateTime = new Date();
+            const formattedLocalTime = localDateTime.toLocaleString('id-ID', {
+                timeZone: 'Asia/Jakarta',
+                hour12: false,
+                year: 'numeric', month: '2-digit', day: '2-digit',
+                hour: '2-digit', minute: '2-digit', second: '2-digit'
+            });
+            const el = document.getElementById("local-time");
+            if (el) el.textContent = "💻 Waktu device: " + formattedLocalTime;
+        }, 1000);
+
         window.onload = async function () {
             try {
                 // Ambil data waktu dari API
@@ -82,10 +100,12 @@
 
                 const startDateTimeServer = dates + " " + times;
 
+                document.getElementById("server-time").textContent = "🛰️ Waktu server: " + startDateTimeServer;
+
                 const startDate = "05/05/2025 18:00";
                 const endDate = "05/09/2025 24:00";
 
-                if (startDateTimeServer >= startDate && startDateTimeServer <= endDate){
+                if (startDateTimeServer >= startDate && startDateTimeServer <= endDate) {
                     window.location.href = "57210214-3682-4e69-961c-0e798db9b7d4.html";
                 }
 
@@ -93,16 +113,25 @@
                 console.error("Gagal mengambil waktu dari API:", error);
             }
         };
+
     </script>
 </head>
 <body>
 <div class="container">
+    <div class="container-login100-form-btn p-t-10">
+        <img src="images/logo-sniper.png" alt="SNIPER" width="130" height="140" class="center">
+    </div>
+    <span class="login100-form-title typing-effect">
+					SMK NEGERI 1 PRINGAPUS
+				</span>
     <h1>404</h1>
     <h2>Oops! Gabisa 🤨</h2>
     <p>Tunggu nanti <strong>5 Mei 2025 pukul 18.00 WIB</strong> ya!!!<br>
         Akses cuma bisa sampai <strong>9 Mei 2025 pukul 24.00 WIB</strong>.</p>
-    <img src="https://i.imgur.com/qIufhof.png" alt="Error Meme" />
-    <br />
+    <img src="https://i.imgur.com/qIufhof.png" alt="Error Meme"/>
+    <div id="server-time" style="margin-top: 10px; font-size: 16px; color: #555;"></div>
+    <div id="local-time" style="margin-top: 5px; font-size: 16px; color: #999;"></div>
+    <br/>
     <a>Yuk Balik ke Jalan yang Benar</a>
 </div>
 </body>
